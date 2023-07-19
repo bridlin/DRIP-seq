@@ -34,6 +34,7 @@ prefix=aln_Tb427_2018_v55
 # mkdir $output_dir
 # for x in "${input_list[@]}"; do
 # trim_galore --paired --output_dir $input_dir/ $input_dir/$x\_1.fastq.gz  $input_dir/$x\_2.fastq.gz && 
+# # Briggs 2018 used the -very-sensitive option of bowtie2
 # bowtie2 --threads 6 -x $genome -1 $input_dir/$x\_1_val_1.fq.gz -2 $input_dir/$x\_2_val_2.fq.gz   -S $output_dir/$x\_$prefix\.sam &&
 # samtools view  -b -q 20 $output_dir/$x\_$prefix\.sam > $output_dir/$x\_$prefix\_filtered.bam &&
 # samtools sort $output_dir/$x\_$prefix\_filtered.bam -o $output_dir/$x\_$prefix\_filtered_sorted.bam &&
