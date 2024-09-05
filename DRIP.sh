@@ -34,6 +34,7 @@ for x in "${input_list[@]}"; do
 trim_galore \
 	--paired \
 	--output_dir $input_dir/ $input_dir/$x\_1.fastq.gz  $input_dir/$x\_2.fastq.gz && 
+# # Briggs 2018 used the -very-sensitive option of bowtie2
 bowtie2 \
 	--threads 6 \
 	-x $genome \
