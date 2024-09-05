@@ -18,10 +18,7 @@ module load samtools/1.13
 module load trim-galore/0.6.5
 module load deeptools/3.5.0
 
-input_list=("ERR2071904"\
-"ERR2071905"\
-"ERR2071908"\
-"ERR2071909")
+input_list=("ERR2071904" "ERR2071905" "ERR2071908" "ERR2071909")
 input_dir=fastq_DRIP_RNAi/
 output_dir=Drip-seq_analysis
 genome=genome/TriTrypDB-55_TbruceiLister427_2018_Genome/index_bowtie2/TriTrypDB-55_TbruceiLister427_2018_Genome
@@ -45,11 +42,8 @@ samtools sort $output_dir/$x\_$prefix\_filtered.bam -o $output_dir/$x\_$prefix\_
 rm -f  $output_dir/$x\_$prefix\.sam &&
 rm -f  $output_dir/$x\_$prefix\_filtered.bam  ; done
 
-input=("ERR2071904" \
-	"ERR2071902" \
-	"ERR2071906")
-sample=("ERR2071905" \
-	"ERR2071908")
+input=("ERR2071904" "ERR2071908")
+sample=("ERR2071905" "ERR2071909")
 
 for y in 0 1 2 ; do
 	bamCompare  \
