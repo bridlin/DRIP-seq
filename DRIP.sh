@@ -18,7 +18,7 @@ module load samtools/1.13
 module load trim-galore/0.6.5
 module load deeptools/3.5.0
 
-input_list=("ERR2037037_" "ERR2037038_")
+input_list=("ERR2037037" "ERR2037038")
 input_dir=DRIP_fastq/
 output_dir=Drip-seq_analysis_2018_H1mut
 genome=genome/TriTrypDB-55_TbruceiLister427_2018_Genome/index_bowtie2/TriTrypDB-55_TbruceiLister427_2018_Genome
@@ -44,8 +44,8 @@ rm -f  $output_dir/$x\_$prefix\.sam &&
 rm -f  $output_dir/$x\_$prefix\_filtered.bam  &&
 samtools index $output_dir/$x\_$prefix\_filtered_sorted.bam ; done
 
-input=("ERR2037038_")
-sample=("ERR2037037_")
+input=("ERR2037038")
+sample=("ERR2037037")
 
 for y in 0; do
 	echo ${sample[$y]}
