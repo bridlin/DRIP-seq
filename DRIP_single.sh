@@ -48,8 +48,7 @@ sample=("ERR2814820")
 input=("ERR2814819")
 
 for y in 0; do
-	echo ${sample[$y]}
-	echo ${input[$y]}
+	echo "sample is : "${sample[$y]}" and input is : "${input[$y]}
 	bamCompare  \
 	--scaleFactorsMethod SES \
 	--binSize 50 \
