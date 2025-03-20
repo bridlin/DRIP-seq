@@ -34,7 +34,7 @@ for x in "${input_list[@]}"; do
 bowtie2 \
 	--threads 6 \
 	-x $genome \
-	-1 $input_dir/$x\_trimmed.fq.gz  \
+	-U $input_dir/$x\_trimmed.fq.gz  \
 	-S $output_dir/$x\_$prefix\.sam &&
 samtools view  -b -q 20 $output_dir/$x\_$prefix\.sam > $output_dir/$x\_$prefix\_filtered.bam &&
 samtools sort $output_dir/$x\_$prefix\_filtered.bam -o $output_dir/$x\_$prefix\_filtered_sorted.bam &&
