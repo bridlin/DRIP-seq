@@ -35,7 +35,7 @@ bowtie2 \
 	--threads 6 \
 	-x $genome \
 	#--very-sensitive \
-	-1 $input_dir/$x\_val_1.fq.gz  \
+	-1 $input_dir/$x\_trimmed.fq.gz  \
 	-S $output_dir/$x\_$prefix\.sam &&
 samtools view  -b -q 20 $output_dir/$x\_$prefix\.sam > $output_dir/$x\_$prefix\_filtered.bam &&
 samtools sort $output_dir/$x\_$prefix\_filtered.bam -o $output_dir/$x\_$prefix\_filtered_sorted.bam &&
