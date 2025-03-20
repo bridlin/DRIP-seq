@@ -30,11 +30,10 @@ mkdir $output_dir
 for x in "${input_list[@]}"; do
 trim_galore \
 	--output_dir $input_dir/ $input_dir/$x\.fastq.gz  && 
-# # Briggs 2018 used the -very-sensitive option of bowtie2
+# # Briggs 2018 used the -very-sensitive option of bowtie2 #--very-sensitive \
 bowtie2 \
 	--threads 6 \
 	-x $genome \
-	#--very-sensitive \
 	-1 $input_dir/$x\_trimmed.fq.gz  \
 	-S $output_dir/$x\_$prefix\.sam &&
 samtools view  -b -q 20 $output_dir/$x\_$prefix\.sam > $output_dir/$x\_$prefix\_filtered.bam &&
