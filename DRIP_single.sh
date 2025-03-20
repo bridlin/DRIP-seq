@@ -28,9 +28,9 @@ prefix=aln_Tb427_2018_v55
 
 mkdir $output_dir
 for x in "${input_list[@]}"; do
-trim_galore \
-	--output_dir $input_dir/ $input_dir/$x\.fastq.gz  && 
-# # Briggs 2018 used the -very-sensitive option of bowtie2 #--very-sensitive \
+# trim_galore \
+# 	--output_dir $input_dir/ $input_dir/$x\.fastq.gz  && 
+# # # Briggs 2018 used the -very-sensitive option of bowtie2 #--very-sensitive \
 bowtie2 \
 	--threads 6 \
 	-x $genome \
