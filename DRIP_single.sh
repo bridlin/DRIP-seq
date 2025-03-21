@@ -33,6 +33,7 @@ for x in "${input_list[@]}"; do
 # # # Briggs 2018 used the -very-sensitive option of bowtie2 #--very-sensitive \
 bowtie2 \
 	--threads 6 \
+	--very-sensitive \
 	-x $genome \
 	-U $input_dir/$x\_trimmed.fq.gz  \
 	-S $output_dir/$x\_$prefix\.sam &&
